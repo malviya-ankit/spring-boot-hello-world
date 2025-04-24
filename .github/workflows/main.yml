@@ -15,7 +15,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build . -t java-app:
+          docker build . -t java-app:latest
           docker ps -a
       
       - name: Run Docker Container
