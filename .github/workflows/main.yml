@@ -19,8 +19,8 @@ jobs:
       
       - name: Run Docker Container
         run: |
-          docker run -d -p 8080:8080 java-app:latest --name java-app
+          docker run -d --name hello-world-app -p 8080:8080 java-app:latest 
           docker ps
           sleep 5
-          docker exec java-app curl http://localhost:8080/hello
+          docker exec hello-world-app curl http://localhost:8080/hello
         
