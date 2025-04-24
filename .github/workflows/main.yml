@@ -16,11 +16,11 @@ jobs:
       - name: Build Docker Image
         run: |
           docker build . -t java-app:latest
-          docker ps 
       
       - name: Run Docker Container
         run: |
           docker run -d -p 8080:8080 java-app:latest
           docker ps
-          curl --request GET 'http://localhost:8080/hello'
+          sleep 5
+          docker exec java-app curl http://localhost:8080/hello
         
